@@ -13,6 +13,8 @@
     "jade": "~1.3.0",
     "morgan": "~1.0.0",
     "nodemon": "^1.2.0",
+    "request": "^2.36.0",
+    "sprintf": "^0.1.3",
     "static-favicon": "~1.0.0"
   }
 }
