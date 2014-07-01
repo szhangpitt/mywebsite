@@ -4,7 +4,7 @@ $(document).ready(function (e) {
     homePageBannerAppear();
     makeAllIFrameResponsive();
     attachSnippetFeatures();
-    attachTurnOffLightFeature();
+    //attachTurnOffLightFeature();  //nah, forget it! if it's not perfect, don't wanna put it there...
     
     
     
