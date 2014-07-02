@@ -135,7 +135,7 @@ $("#context_tags").empty();
 	var cluster_id = str3_1 + '/' + str3_2 + '/' + str3_3;
 	
 	
-	var str ="http://api.flickr.com/services/rest/?method=flickr.tags.getClusterPhotos&api_key=dbc006ce6b8ec8613c7efde226b1af50&extras=owner_name&format=json&jsoncallback=?&tag=";
+	var str ="https://api.flickr.com/services/rest/?method=flickr.tags.getClusterPhotos&api_key=dbc006ce6b8ec8613c7efde226b1af50&extras=owner_name&format=json&jsoncallback=?&tag=";
 	str = str + tag;
 	str = str + '&cluster_id=' + cluster_id;
 	var randomiToMedium = Math.floor(Math.random()*12);
@@ -176,7 +176,7 @@ $("#context_tags").empty();
           });
      });
 	
-	var str2 = "http://api.flickr.com/services/rest/?method=flickr.tags.getClusters&api_key=dbc006ce6b8ec8613c7efde226b1af50&format=json&jsoncallback=?&tag=";
+	var str2 = "https://api.flickr.com/services/rest/?method=flickr.tags.getClusters&api_key=dbc006ce6b8ec8613c7efde226b1af50&format=json&jsoncallback=?&tag=";
 	str2 = str2+tag;
 		
 //	$("#context_tags").append("test");
