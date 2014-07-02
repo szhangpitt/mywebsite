@@ -128,34 +128,6 @@ body.s-dark {
     max-width: 100%;
 }
 
-
-.story{
-}
-
-.story.pre-come{
-    top: 150px;
-    opacity: 0.2;
-}
-
-.story.pre-come.come-in {
-  top: 0;
-  opacity: 1;
-  -webkit-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  -o-transition: all 0.6s;
-  -ms-transition: all 0.6s;
-  transition: all 0.6s;
-
-}
-
-
-.story.already-visible {
-    top: 0;
-    opacity: 1;
-}
-
-
-
 /* Extra small devices (phones, less than 768px) */
 
 /* No media query since this is the default in Bootstrap */

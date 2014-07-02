@@ -5,18 +5,13 @@ $(document).ready(function (e) {
     makeAllIFrameResponsive();
     attachSnippetFeatures();
     //attachTurnOffLightFeature();  //nah, forget it! if it's not perfect, don't wanna put it there...
-    scrollToTopBeforeUnload();
+    
     
     
     if($('.photography').length > 0){
         getMyWebsitePhotos();
     }
 
-    if($('.education').length > 0){
-        setTimeout(function(){
-                    turnOnSlideInEffect();
-                }, 200);
-    }
     
     
     function skipMobileURLBar(){
@@ -161,94 +156,10 @@ $(document).ready(function (e) {
                     }, wait);
                     
                 }); 
-
-                setTimeout(function(){
-                    turnOnSlideInEffect();
-                }, 200);
-            }
-        });
-    }
-
-    function scrollToTopBeforeUnload(){
-        $(window).bind('beforeunload', function(){
-            $(window).scrollTop(0);
-        });
-    }
-    
-    
-    (function($) {
-
-      /**
-       * Copyright 2012, Digital Fusion
-       * Licensed under the MIT license.
-       * http://teamdf.com/jquery-plugins/license/
-       *
-       * @author Sam Sehnert
-       * @desc A small plugin that checks whether elements are within
-       *     the user visible viewport of a web browser.
-       *     only accounts for vertical position, not horizontal.
-       */
-
-      $.fn.visible = function(partial) {
-            
-              var $t            = $(this),
-                  $w            = $(window),
-                  viewTop       = $w.scrollTop(),
-                  viewBottom    = viewTop + $w.height(),
-                  _top          = $t.offset().top,
-                  _bottom       = _top + $t.height(),
-                  compareTop    = partial === true ? _bottom : _top,
-                  compareBottom = partial === true ? _top : _bottom;
-            
-            return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-
-          };
-            
-    })(jQuery);
-
-    function checkAlreadyVisibleStory(){
-        $(".photography .story, .education .story").each(function(index, item){
-            var el = $(item);
-            if(el.visible(true)){
-                el.addClass('already-visible');
-            }
-            else{
-                el.addClass('pre-come');
             }
         });
     }
     
-
-
-
-
-    function turnOnSlideInEffect(){
-        var top = $(window).scrollTop();
-        console.log(top);
-        if(top > 0){
-            //if it's some kinda refresh where the scroll position is not on top 
-            //after page is loaded, then don't bother at all 
-            //because things can get funky
-            
-            console.log('don\'t bother! turnOnSlideInEffect')
-            return false; 
-        }
-        else{
-            checkAlreadyVisibleStory();
-
-            $(window).scroll(function(event) {
-              $(".photography .story, .education .story").each(function(i, el) {
-                var el = $(el);
-                if (el.visible(true)) {
-                  el.addClass("come-in"); 
-                  console.log('come-in', el);
-                } 
-              });
-              
-            });
-        }
-    }
-
-
+    //refreshed
 
 });
