@@ -236,7 +236,17 @@ $(document).ready(function (e) {
         else{
             checkAlreadyVisibleStory();
 
-            $(window).on('scroll', function(event) {
+
+            setInterval(function(){
+                $(".photography .story, .education .story").each(function(i, el) {
+                var el = $(el);
+                if (el.visible(true)) {
+                  el.addClass("come-in"); 
+                  console.log('come-in', el);
+                } 
+              });
+            }, 50);
+            /*$(window).on('scroll', function(event) {
               $(".photography .story, .education .story").each(function(i, el) {
                 var el = $(el);
                 if (el.visible(true)) {
@@ -245,9 +255,9 @@ $(document).ready(function (e) {
                 } 
               });
               
-            });
+            });*/
 
-            document.ontouchmove = function(e) {
+            /*document.ontouchmove = function(e) {
                 $(".photography .story, .education .story").each(function(i, el) {
                 var el = $(el);
                 if (el.visible(true)) {
@@ -255,7 +265,7 @@ $(document).ready(function (e) {
                   console.log('come-in', el);
                 } 
               });
-            };
+            };*/
         }
     }
 
