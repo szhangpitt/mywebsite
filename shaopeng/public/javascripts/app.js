@@ -236,7 +236,7 @@ $(document).ready(function (e) {
         else{
             checkAlreadyVisibleStory();
 
-            $(window).scroll(function(event) {
+            $(window).on('scroll', function(event) {
               $(".photography .story, .education .story").each(function(i, el) {
                 var el = $(el);
                 if (el.visible(true)) {
@@ -246,6 +246,16 @@ $(document).ready(function (e) {
               });
               
             });
+
+            document.ontouchmove = function(e) {
+                $(".photography .story, .education .story").each(function(i, el) {
+                var el = $(el);
+                if (el.visible(true)) {
+                  el.addClass("come-in"); 
+                  console.log('come-in', el);
+                } 
+              });
+            };
         }
     }
 
