@@ -1,0 +1,52 @@
+App.progressCountTotal = 6;
+App.progressCountCurrent = 0;
+fw.dismissBatchDialogWhenDone = true;
+doc = fw.openDocument('file:///C|/Users/Shaopeng/Websites/shz26/photo/20090903893[1].jpg');
+App.progressCountCurrent = 1;
+App.batchStatusString = '20090903893[1].jpg';
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/20090903893[1]_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/20090903893[1]_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/images/20090903893[1]_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/20090903893[1]_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/20090903893[1]_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/20090903893[1]_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Users/Shaopeng/Websites/shz26/photo/me.jpg');
+App.progressCountCurrent = 2;
+App.batchStatusString = 'me.jpg';
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/me_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/me_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/images/me_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/me_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/me_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/me_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Users/Shaopeng/Websites/shz26/photo/P1050529.jpg');
+App.progressCountCurrent = 3;
+App.batchStatusString = 'P1050529.jpg';
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/P1050529_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/P1050529_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/images/P1050529_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/P1050529_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/P1050529_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/P1050529_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Users/Shaopeng/Websites/shz26/photo/Shaopeng Zhang.jpg');
+App.progressCountCurrent = 4;
+App.batchStatusString = 'Shaopeng Zhang.jpg';
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/Shaopeng Zhang_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/Shaopeng Zhang_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/images/Shaopeng Zhang_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/Shaopeng Zhang_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/Shaopeng Zhang_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/Shaopeng Zhang_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Users/Shaopeng/Websites/shz26/photo/_DSC5392[1].jpg');
+App.progressCountCurrent = 5;
+App.batchStatusString = '_DSC5392[1].jpg';
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/_DSC5392[1]_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/_DSC5392[1]_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/images/_DSC5392[1]_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/_DSC5392[1]_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/_DSC5392[1]_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/_DSC5392[1]_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Users/Shaopeng/Websites/shz26/photo/_DSC6534[1].jpg');
+App.progressCountCurrent = 6;
+App.batchStatusString = '_DSC6534[1].jpg';
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/_DSC6534[1]_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/images/_DSC6534[1]_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/images/_DSC6534[1]_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/_DSC6534[1]_jpg.jpg') || confirm('file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/_DSC6534[1]_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Users/Shaopeng/Websites/shz26/photo/thumbnails/_DSC6534[1]_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+'done';

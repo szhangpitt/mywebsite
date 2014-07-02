@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mouse Tracking Javascript</title>
+<style type=text/css>
+
+#region
+{
+	width:800px;
+	height:400px;
+	border: 2px dashed #333;
+	text-align:center;
+	vertical-align:middle;
+	font-size:24px;
+	font-family:Verdana, Geneva, sans-serif;
+	color: #999;
+}
+#areatext{
+	vertical-align: middle;
+	position: relative;
+	top: 200px;
+	}
+</style>
+<script language="JavaScript" type="text/javascript">
+var c=0;
+var counting =0;
+var IE = 0;
+var tempX=0;
+var tempY=0;
+
+document.onmousemove = getMouseXY;
+
+function count(){
+	<!--console.log("function count"+counting);-->
+if(counting == 1)
+{
+	c = c + 1; 	
+	var data = document.getElementById('mousemile');
+	data.value = c;
+	var inch = document.getElementById('mouseinch');
+	inch.value = c/72;
+}
+}
+
+function mousemoving(){
+	count();	
+}
+
+function onoff(){
+	counting = 1- counting;
+}
+
+function on(){
+	counting = 1;
+	}
+
+function off(){
+	counting =0;
+	}
+
+
+function checkBrowser(){
+	var browser = navigator.appName;
+	if(browser == "IE")	{
+		IE = 1;
+		}
+	
+	}
+	
+function getMouseXY(e){
+	<!--console.log("xy");-->
+	if(counting == 1)
+	{
+	if(IE){
+		<!--console.log("xy:IE");-->
+		tempX = event.clientX + document.body.scrollLeft;
+		tempY = event.clientY + document.body.scrollTop;
+		}else{
+			<!--console.log("xy:non-IE");-->
+			tempX = e.pageX;
+			tempY = e.pageY;
+		}
+		if(tempX < 0){
+			tempX = 0;
+			}
+		if(tempY < 0){tempY = 0;}
+		document.getElementById('mouseX').setAttribute("value", tempX);
+		document.getElementById('mouseY').setAttribute("value", tempY);
+	}
+	}
+</script>
+
+</head>
+
+<body onload="checkBrowser()">
+<h1>Mouse events playground</h1>
+<form>
+  Total<input type="text" id="mousemile" />px&nbsp;&nbsp;<input type="text" id="mouseinch" />inch&nbsp;&nbsp;
+
+  X<input type="text" id="mouseX" size="4"/>&nbsp;&nbsp;
+  Y<input type="text" id="mouseY" size="4"/><br/>
+</form>
+
+<div id="region" onmousemove="count()" onmouseout="off()" onmouseover="on()">
+  <div id="areatext">mouse tracking area</div>
+</div>
+</body>
+
+</html>

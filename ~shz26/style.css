@@ -1,0 +1,22 @@
+body {
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+.twoColFixLtHdr #container #main #mainContent ul li {
+	font-size: smaller;
+}
+img{
+	border:#C3D9FF 4px solid;
+	}
+.gallery-img{
+	 width:500px;
+	 border:#C3D9FF 4px solid;
+}

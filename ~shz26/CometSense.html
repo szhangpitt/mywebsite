@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+function parseURL(){
+	var url = $("#url").val();
+	
+	
+	var query_all = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22";
+	var xpath_title = "%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Fdiv%5B%40class%3D%22field%20field-type-text%20field-field-node-title%22%5D%2F%2Fp'";
+	var xpath_speaker = "%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Fdiv%5B%40class%3D%22field%20field-type-text%20field-field-speaker%22%5D%2F%2Fp'";
+	var xpath_time = "%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Fspan%5B%40class%3D%22date-display-single%22%5D'";
+	var xpath_location = "%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Fdiv%5B%40class%3D%22field%20field-type-text%20field-field-room-location%22%5D%2F%2Fp'";
+	var xpath_abstract = "%22%20and%0A%20%20%20%20%20%20xpath%3D'%2F%2Ftd%5B%40id%3D%22content-cell%22%5D%2F%2Fdiv%5B%40class%3D%22content%22%5D%2Fp'";
+	
+	var yql_title = query_all	
+					+ escape(url)
+					+ xpath_title 
+					+ "&format=json&callback=?";
+	
+	var yql_speaker = query_all	
+					+ escape(url)
+					+ xpath_speaker
+					+ "&format=json&callback=?";
+					
+	var yql_time = query_all	
+					+ escape(url)
+					+ xpath_time
+					+ "&format=json&callback=?";
+					
+	var yql_location = query_all	
+					+ escape(url)
+					+ xpath_location
+					+ "&format=json&callback=?";
+					
+	var yql_abstract = query_all	
+					+ escape(url)
+					+ xpath_abstract
+					+ "&callback=?";
+							
+	$.getJSON(yql_title, function(data){
+		var data1 = data;
+		var titletext = data.query.results.p;
+		
+		$("#title").val(titletext);
+		});		
+		
+	$.getJSON(yql_speaker, function(data){
+		var data1 = data;
+		var speakertext = data.query.results.p;
+		
+		$("#speaker").val(speakertext);
+		});
+		
+	$.getJSON(yql_time, function(data){
+		var data1 = data;
+		var timetext = data.query.results.span.content;
+		
+		$("#time").val(timetext);
+		});
+		
+	$.getJSON(yql_location, function(data){
+		var data1 = data;
+		var locationtext = data.query.results.p;
+		
+		$("#location").val(locationtext);
+		});
+		
+	$.getJSON(yql_abstract, function(data){
+		var data1 = data;
+		var abstracttext = "";
+		
+		for (p in data.results)
+		{
+			if(p == 0){
+				continue; //because first<p> is a title bar on HCII website
+			}
+			else{
+				abstracttext += data.results[p];
+			}
+		}
+		$("#abstract").empty();
+		$("#abstract").append(abstracttext);
+		});
+	}
+	
+function parseURL2(){
+	$.getJSON("http://halley.exp.sis.pitt.edu/cn3_dev/GetEventInfo", {eventID:"9"}, function(data){
+		var data1 = data;
+		var data2 = data;
+		});
+	}
+</script>
+</head>
+
+<body>
+<h1>CometSense</h1>
+<p>Developed by Shaopeng Zhang (szhangpitt@gmail.com)</p>
+<p>This parser currently works on <a href="http://www.hcii.cmu.edu/news/seminar">HCII seminars</a>. Tested on Firefox3.6 and IE9 (If you are using IE6, please, get a real browser :-P). </p>
+<p>Copy and paste url of specific talks to the URL bar, then click "Parse"</p>
+<p>Example of URL: <br/>http://www.hcii.cmu.edu/news/seminar/2010/10/building-better-privacy-policy</p>
+<p>
+  <label>URL  </label><br/>
+  <input type="text" name="url" id="url" size="100" />
+
+  <input type="submit" name="parse" id="parse" value="Parse" onclick="parseURL()" />
+  <input type="submit" name="parse" id="parse" value="Parse" onclick="parseURL2()" />
+
+</p>
+<p>
+  <label for="title">Title</label><br/>
+  <input type="text" name="title" id="title" size="100" />
+</p>
+<p>
+  <label for="speaker">Speaker</label><br/>
+  <input type="text" name="speaker" id="speaker" size="40" />
+</p>
+<p>
+	<label for="time">Time</label><br/>
+  <input type="text" name="time" id="time" size="40" />
+</p>
+<p>
+	<label for="location">Location</label><br/>
+  <input type="text" name="location" id="location" size="40" />
+</p>
+<p>
+  <label for="abstract">Abstract</label><br/>
+<div id="abstract" style="width:700px;"></div>
+</p>
+</body>
+</html>
