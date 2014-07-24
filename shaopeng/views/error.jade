@@ -1,6 +1,9 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .container
+    h1
+      | Well this is awkward...
+    p 
+      | Some of my old stuff was not fully set up yet in this transition to AWS
+    a(href=lastPage) Take me back

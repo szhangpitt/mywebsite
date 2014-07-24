@@ -3,26 +3,38 @@ var router = express.Router();
 var request = require('request');
 var sprintf = require('sprintf');
 
+// all requests to this router will first hit this middleware
+router.use(function(req, res, next) {
+  
+  console.log('%s, %s, %s', req.method, req.url, req.path);
+  next();
+});
+
 /* GET home page. */
 router.get('/', function(req, res) {
+  req.session.lastPage = '/';
   res.render('index', { title: 'Home' });
 });
 
 router.get('/education', function(req, res) {
+  req.session.lastPage = '/education';
   res.render('education', { title: 'Education' });
 });
 
 router.get('/experience', function(req, res) {
+  req.session.lastPage = '/experience';
   res.render('experience', { title: 'Experience' });
 });
 
 
 router.get('/photography', function(req, res) {
+  req.session.lastPage = '/photography';
   res.render('photography', { title: 'Photography' });
 });
 
 
 router.get('/contact', function(req, res) {
+  req.session.lastPage = '/contact';
   res.render('contact', { title: 'Contact' });
 });
 

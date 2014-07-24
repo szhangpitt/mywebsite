@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var expressSession = require('express-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
@@ -19,6 +20,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(expressSession({secret: 'shhhhhdonttellanyone'}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -40,7 +42,8 @@ if (app.get('env') === 'development') {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
-            error: err
+            error: err,
+            lastPage: req.session.lastPage || '/'
         });
     });
 }
@@ -51,7 +54,8 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-        error: {}
+        error: {},
+        lastPage: req.session.lastPage || '/'
     });
 });
 
