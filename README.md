@@ -4,4 +4,4 @@ This is my personal website. It uses node.js and expressjs to host the pages. I'
 
 Currently the pages are hosted on [shaopeng.us](http://shaopeng.us). It may be on and off occasionally during the construction. 
 
-~shz25 folder contains old stuff from PITT. Don't ask me what's in there. It's a mistery. 
+~shz26 folder contains old stuff from PITT. Don't ask me what's in there. It's a mistery. 
